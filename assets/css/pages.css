@@ -122,7 +122,7 @@
     display: flex;
     flex-wrap: nowrap;
     padding-left: calc(13.021vw - 1.771vw);
-    padding-right: calc(13.021vw - 1.771vw);
+    padding-right: calc(8.333vw - 1.771vw);
 }
 
 .main .only-pc .retails .retails-group .item {
@@ -163,7 +163,7 @@
     display: flex;
     flex-wrap: nowrap;
     padding-left: calc(18.229vw - 4.375vw);
-    padding-right: calc(18.229vw - 4.375vw);
+    padding-right: calc(8.333vw - 4.375vw);
 }
 
 .main .only-pc .news .news-group .item {
