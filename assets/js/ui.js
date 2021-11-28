@@ -106,9 +106,6 @@ $(function(){
   const $footer = $main.find('.only-pc .app-footer');
   const $fake = $main.find('.only-pc .fake-footer');
 
-  console.log($fake)
-  console.log($footer)
-
   gsap.to($fake, {
     scrollTrigger: {
       trigger: $fake,
@@ -131,7 +128,7 @@ $(function(){
 // open inquiry popup
 $(function(){
   const $button = $main.find(".only-pc .btn-inquiry");
-  const $inquiry = $main.find(".only-pc .inquiry");
+  const $inquiry = $main.find(".only-pc .app-inquiry");
 
   $button.on("click", function (event) {
     event.preventDefault();
@@ -146,7 +143,11 @@ $(function(){
 
 // floating
 $(function(){
-  const $floating = $main.find('.only-pc .floating');
+  const $floating = $main.find('.only-pc .app-floating');
+  const $default = $floating.find('.image-default');
+  const $active = $floating.find('.image-active');
+
+  console.log($default, $active)
 
   gsap.registerPlugin(ScrollTrigger);
 
@@ -160,15 +161,19 @@ $(function(){
         return $main.find('.hero').height();
       },
       onToggle: function (self) {
+        console.log('toggle')
         if (window.scrollY === 0) {
-          $floating.find('.image-active').css('display', 'none');
-          $floating.find('.image-default').css('display', 'block');
+          console.log('111')
+          $active.hide();
+          $default.show();
         } else if (!self.isActive) {
-          $floating.find('.image-active').css('display', 'block');
-          $floating.find('.image-default').css('display', 'none');
+          console.log('222')
+          $active.show();
+          $default.hide();
         } else {
-          $floating.find('.image-active').css('display', 'none');
-          $floating.find('.image-default').css('display', 'block');
+          console.log('333')
+          $active.hide();
+          $default.show();
         }
       },
       invalidateOnRefresh: true
