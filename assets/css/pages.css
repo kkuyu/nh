@@ -4,15 +4,17 @@
 /* main header */
 .main .only-pc .app-header {
     position: absolute;
-    top: 0;
+    top: -7.292vw;
     left: 0;
     width: 100%;
-    height: 6.250vw;
+    height: 7.292vw;
     z-index: 20;
 }
 
 .main .only-pc .app-header .btn-open {
-    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     color: transparent;
@@ -43,12 +45,11 @@
 /* main hero */
 .main .only-pc .hero {}
 
-.main .only-pc .hero .floating {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 25.469vw;
-    z-index: 10;
+.main .only-pc .content {
+  position: absolute;
+  top: 16.250vw;
+  left: 23.438vw;
+  color: #fff;
 }
 
 .main .only-pc .nhfinance {
@@ -172,19 +173,40 @@
     box-sizing: content-box;
 }
 
-/* main footr */
-.main .only-pc .footer {}
+/* main footer */
+.main .only-pc .app-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
 
-.main .only-pc .footer .floating {
+.main .only-pc .app-footer > img {
+    transform: translateY(50%);
+}
+
+/* main floating */
+.main .only-pc .app-floating {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #212121;
+    z-index: 10;
+}
+
+.main .only-pc .app-floating .btn-inquiry {
     position: absolute;
     bottom: 0;
     right: 0;
     width: 25.469vw;
-    z-index: 10;
+    height: 100%;
+    color: transparent;
 }
 
 /* main inquiry */
-.main .only-pc .inquiry {
+.main .only-pc .app-inquiry {
     display: none;
     position: fixed;
     top: 0;
@@ -195,11 +217,11 @@
     z-index: 20;
 }
 
-.main .only-pc .inquiry.show {
+.main .only-pc .app-inquiry.show {
     display: block;
 }
 
-.main .only-pc .inquiry .inner {
+.main .only-pc .app-inquiry .inner {
     position: absolute;
     top: 50%;
     left: 0;
@@ -207,7 +229,7 @@
     transform: translateY(-50%);
 }
 
-.main .only-pc .inquiry .btn-close {
+.main .only-pc .app-inquiry .btn-close {
     position: absolute;
     top: 3.385vw;
     right: 3.906vw;

@@ -31,8 +31,9 @@ select:focus {outline: none;}
 .only-pc {display: block !important;}
 .only-mobile {display: none !important;}
 
-.app-content {position: relative;}
-.app-header img, .app-gnb img, .app-content img {display: inline-block; width: 100%; vertical-align: top;}
+.app-content-wrap {}
+.app-content-wrap img {display: inline-block; width: 100%; vertical-align: top;}
+.app-content-wrap .app-content {position: relative;}
 
 @media all and (min-width:1px) and (max-width:1024px) {
   .only-pc {display: none !important;}

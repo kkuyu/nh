@@ -1,10 +1,18 @@
-$(function(){
-  const $header = $('.main .app-header');
-  const $gnb = $('.main .app-gnb');
+const $main = $('.main');
 
-  if (!$header || !$gnb) {
-    return;
-  }
+// header showing
+// hamburger click => gnb open
+$(function(){
+  const $header = $main.find('.app-header');
+  const $gnb = $main.find('.app-gnb');
+
+  $(document).ready(function () {
+    $header
+      .delay(400)
+      .animate({
+        top: 0,
+      }, 500, 'easeOutCubic');
+  });
 
   $header.find('.btn-open').on("click", function (event) {
     event.preventDefault();
@@ -17,12 +25,9 @@ $(function(){
   });
 });
 
+// retails parallax
 $(function(){
-  const $retails = $('.main .only-pc .retails');
-
-  if (!$retails) {
-    return;
-  }
+  const $retails = $main.find('.only-pc .retails');
 
   gsap.registerPlugin(ScrollTrigger);
 
@@ -58,12 +63,9 @@ $(function(){
   });
 });
 
+// news parallax
 $(function(){
-  const $news = $('.main .only-pc .news');
-
-  if (!$news) {
-    return;
-  }
+  const $news = $main.find('.only-pc .news');
 
   gsap.registerPlugin(ScrollTrigger);
 
@@ -99,13 +101,37 @@ $(function(){
   });
 });
 
+// footer showing
 $(function(){
-  const $button = $(".main .only-pc .btn-inquiry");
-  const $inquiry = $(".main .only-pc .inquiry");
+  const $footer = $main.find('.only-pc .app-footer');
+  const $fake = $main.find('.only-pc .fake-footer');
 
-  if (!$inquiry) {
-    return;
-  }
+  console.log($fake)
+  console.log($footer)
+
+  gsap.to($fake, {
+    scrollTrigger: {
+      trigger: $fake,
+      pin: false,
+      end: 'bottom top+=100%',
+      onUpdate: function (self) {
+        if (self.progress > 0) {
+          $footer.css('opacity', 1);
+        } else {
+          $footer.css('opacity', 0);
+        }
+        const num = 50 - (self.progress * 50);
+        $footer.find('img').css('transform', 'translateY(' + num + '%)');
+      },
+      invalidateOnRefresh: true,
+    },
+  });
+});
+
+// open inquiry popup
+$(function(){
+  const $button = $main.find(".only-pc .btn-inquiry");
+  const $inquiry = $main.find(".only-pc .inquiry");
 
   $button.on("click", function (event) {
     event.preventDefault();
@@ -115,5 +141,37 @@ $(function(){
   $inquiry.find('.btn-close').on("click", function (event) {
     event.preventDefault();
     $inquiry.removeClass('show');
+  });
+});
+
+// floating
+$(function(){
+  const $floating = $main.find('.only-pc .floating');
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.to($main, {
+    scrollTrigger: {
+      trigger: $main,
+      start: function () {
+        return 0;
+      },
+      end: function () {
+        return $main.find('.hero').height();
+      },
+      onToggle: function (self) {
+        if (window.scrollY === 0) {
+          $floating.find('.image-active').css('display', 'none');
+          $floating.find('.image-default').css('display', 'block');
+        } else if (!self.isActive) {
+          $floating.find('.image-active').css('display', 'block');
+          $floating.find('.image-default').css('display', 'none');
+        } else {
+          $floating.find('.image-active').css('display', 'none');
+          $floating.find('.image-default').css('display', 'block');
+        }
+      },
+      invalidateOnRefresh: true
+    },
   });
 });
