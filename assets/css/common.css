@@ -32,11 +32,9 @@ select:focus {outline: none;}
 .only-mobile {display: none !important;}
 
 .app-content {position: relative;}
-.app-header img, .app-gnb img, .app-content img {display: inline-block; max-width: 100%; vertical-align: top;}
+.app-header img, .app-gnb img, .app-content img {display: inline-block; width: 100%; vertical-align: top;}
 
 @media all and (min-width:1px) and (max-width:1024px) {
   .only-pc {display: none !important;}
   .only-mobile {display: block !important;}
-
-  .app-header img, .app-gnb img, .app-content img {width: 100%;}
 }
