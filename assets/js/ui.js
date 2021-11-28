@@ -49,8 +49,7 @@ $(function(){
     scrollTrigger: {
       trigger: $retails,
       pin: true,
-      // pinSpacing: false,
-      scrub: true,
+      scrub: 0.2,
       end: function () {
         return '+=' + maxWidth;
       },
@@ -91,8 +90,7 @@ $(function(){
     scrollTrigger: {
       trigger: $news,
       pin: true,
-      // pinSpacing: false,
-      scrub: true,
+      scrub: 0.2,
       end: function () {
         return '+=' + maxWidth;
       },
