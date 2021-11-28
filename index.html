@@ -20,18 +20,14 @@
         <main class="app-content-wrap only-pc">
             <header class="app-header">
                 <a href="#" class="btn-open">열기</a>
+                <img src="../assets/img/pc-header.png" alt="">
             </header>
             <header class="app-gnb">
                 <a href="#" class="btn-close">닫기</a>
-                <img src="../assets/img/pc-hero-gnb.png" alt="">
+                <img src="../assets/img/pc-gnb.png" alt="">
             </header>
             <section class="app-content hero">
                 <img src="../assets/img/pc-hero.png" alt="">
-                <div class="floating">
-                    <a href="#none" class="btn-inquiry">
-                        <img src="../assets/img/pc-hero-floating.png" alt="">
-                    </a>
-                </div>
             </section>
             <section class="app-content nhfinance">
                 <img src="../assets/img/pc-nhfinance.png" alt="">
@@ -79,20 +75,23 @@
                     </div>
                 </div>
             </section>
-            <section class="app-content footer">
-                <img src="../assets/img/pc-footer.png" alt="">
-                <div class="floating">
-                    <a href="" class="btn-inquiry">
-                        <img src="../assets/img/pc-footer-floating.png" alt="">
-                    </a>
-                </div>
+            <section class="app-content fake-footer">
+                <img src="../assets/img/pc-footer.png" style="opacity: 0;" alt="">
             </section>
-            <section class="app-content inquiry">
+            <footer class="app-footer" style="opacity: 0;">
+                <img src="../assets/img/pc-footer.png" alt="">
+            </footer>
+            <div class="app-floating">
+                <img src="../assets/img/pc-footer-floating-default.png" class="image-default" alt="">
+                <img src="../assets/img/pc-footer-floating-active.png" class="image-active" style="display: none;" alt="">
+                <a href="" class="btn-inquiry">문의하기</a>
+            </div>
+            <div class="app-inquiry">
                 <div class="inner">
                     <img src="../assets/img/pc-inquiry.png" alt="">
                     <a href="#" class="btn-close">닫기</a>
                 </div>
-            </section>
+            </div>
         </main>
         <main class="app-content-wrap only-mobile">
             <header class="app-header">
@@ -100,7 +99,7 @@
             </header>
             <header class="app-gnb">
                 <a href="#" class="btn-close">닫기</a>
-                <img src="../assets/img/mo-hero-gnb.png" alt="">
+                <img src="../assets/img/mo-gnb.png" alt="">
             </header>
             <section class="app-content hero">
                 <img src="../assets/img/mo-hero.png" alt="">
@@ -109,6 +108,7 @@
     </div>
 
     <script src="../assets/js/lib/jquery-3.5.1.min.js"></script>
+    <script src="../assets/js/lib/jquery-ui.js"></script>
     <script src="../assets/js/lib/gsap.min.js"></script>
     <script src="../assets/js/lib/gsap.scrollTrigger.min.js"></script>
     <script src="../assets/js/ui.js"></script>
