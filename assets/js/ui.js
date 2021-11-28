@@ -1,5 +1,7 @@
 const $main = $('.main');
 
+window.scrollTo(0,0);
+
 // header showing
 // hamburger click => gnb open
 $(function(){
@@ -22,6 +24,89 @@ $(function(){
   $gnb.find('.btn-close').on("click", function (event) {
     event.preventDefault();
     $gnb.removeClass('show');
+  });
+});
+
+// location parallax
+$(function(){
+  const $location = $main.find('.only-pc .location');
+  const $childImage = $location.find('> img');
+
+  const $nav = $location.find('.location-nav');
+  const $navBlock = $location.find('.location-nav .block');
+  const $groupItems = $location.find('.location-group .item');
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.to($location, {
+    scrollTrigger: {
+      trigger: $childImage,
+      start: 'center center-=7%',
+      endTrigger: $location,
+      end: 'bottom bottom',
+      pin: true,
+      scrub: 0.2,
+      invalidateOnRefresh: true
+    },
+  });
+  gsap.to($location, {
+    scrollTrigger: {
+      trigger: $nav,
+      start: 'center center-=7%',
+      endTrigger: $location,
+      end: 'bottom bottom',
+      pin: true,
+      scrub: 0.2,
+      onUpdate: function () {
+        let activeIdx = -1;
+        const center = window.innerHeight / 2;
+        for (let idx = 0; idx < $groupItems.length; idx++) {
+          const elRect = $groupItems[idx].getBoundingClientRect();
+          if (center > elRect.top + elRect.height) {
+            activeIdx = idx;
+          }
+        }
+        $navBlock
+          .eq(activeIdx + 1)
+          .addClass('active')
+          .siblings()
+          .removeClass('active');
+      },
+      invalidateOnRefresh: true
+    },
+  });
+});
+
+// amenities parallax
+$(function(){
+  const $amenities = $main.find('.only-pc .amenities');
+  const $childImage = $amenities.find('> img');
+
+  const $groupItems = $amenities.find('.amenities-group .item');
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.to($amenities, {
+    scrollTrigger: {
+      trigger: $childImage,
+      endTrigger: $amenities,
+      end: 'bottom bottom',
+      pin: true,
+      scrub: 0.2,
+      invalidateOnRefresh: true
+    },
+  });
+  gsap.to($main, {
+    scrollTrigger: {
+      trigger: $childImage,
+      endTrigger: $groupItems,
+      pin: false,
+      onUpdate: function (self) {
+        const num = 20 - (self.progress * 50);
+        $groupItems.last().css('transform', 'translateY(' + num + '%)');
+      },
+      invalidateOnRefresh: true
+    },
   });
 });
 
@@ -50,7 +135,6 @@ $(function(){
     x: function () {
       return '-' + (maxWidth - $(window).width());
     },
-    ease: "none",
     scrollTrigger: {
       trigger: $retails,
       pin: true,
@@ -88,7 +172,6 @@ $(function(){
     x: function () {
       return '-' + (maxWidth - $(window).width());
     },
-    ease: "none",
     scrollTrigger: {
       trigger: $news,
       pin: true,
@@ -117,7 +200,7 @@ $(function(){
         } else {
           $footer.css('opacity', 0);
         }
-        const num = 50 - (self.progress * 50);
+        const num = 60 - (self.progress * 60);
         $footer.find('img').css('transform', 'translateY(' + num + '%)');
       },
       invalidateOnRefresh: true,
@@ -125,7 +208,7 @@ $(function(){
   });
 });
 
-// open inquiry popup
+// inquiry popup
 $(function(){
   const $button = $main.find(".only-pc .btn-inquiry");
   const $inquiry = $main.find(".only-pc .app-inquiry");
@@ -147,8 +230,6 @@ $(function(){
   const $default = $floating.find('.image-default');
   const $active = $floating.find('.image-active');
 
-  console.log($default, $active)
-
   gsap.registerPlugin(ScrollTrigger);
 
   gsap.to($main, {
@@ -161,17 +242,13 @@ $(function(){
         return $main.find('.hero').height();
       },
       onToggle: function (self) {
-        console.log('toggle')
         if (window.scrollY === 0) {
-          console.log('111')
           $active.hide();
           $default.show();
         } else if (!self.isActive) {
-          console.log('222')
           $active.show();
           $default.hide();
         } else {
-          console.log('333')
           $active.hide();
           $default.show();
         }
