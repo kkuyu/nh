@@ -160,6 +160,15 @@
     background: #222527;
 }
 
+.main .only-pc .location .location-nav .block .min img {
+    opacity: 0.3;
+    transition: opacity 0.4s 0.2s;
+}
+
+.main .only-pc .location .location-nav .block.active .min img {
+    opacity: 1;
+}
+
 .main .only-pc .location .location-group {
     margin-left: auto;
     margin-right: 8.333vw;
@@ -210,17 +219,8 @@
 
 /* main retails */
 .main .only-pc .retails {
-    height: calc(100vh - 5.729vw);
     background-color: #212121;
     overflow: hidden;
-}
-
-.main .only-pc .retails > img {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    transform: translateY(-50%);
 }
 
 .main .only-pc .retails .retails-group {
@@ -228,18 +228,25 @@
     top: 50%;
     left: 0;
     margin-top: 1.146vw;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
     height: 35.677vw;
     transform: translateY(-50%);
+    overflow: hidden;
 }
 
 .main .only-pc .retails .retails-group .inner {
     display: flex;
     flex-wrap: nowrap;
+    margin-left: 50vw;
     padding-left: calc(13.021vw - 1.771vw);
     padding-right: calc(8.333vw - 1.771vw);
+    overflow: visible;
 }
 
 .main .only-pc .retails .retails-group .item {
+    flex: 0 0 auto;
     width: 28.125vw;
     padding: 0 1.771vw;
     box-sizing: content-box;
@@ -251,36 +258,33 @@
 
 /* main news */
 .main .only-pc .news {
-    height: calc(100vh - 5.729vw);
     background-color: #fff;
     overflow: hidden;
-}
-
-.main .only-pc .news > img {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    transform: translateY(-50%);
 }
 
 .main .only-pc .news .news-group {
     position: absolute;
     top: 50%;
     left: 0;
+    margin-top: 1.146vw;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
     margin-top: 0.156vw;
     height: 17.708vw;
-    transform: translateY(-50%);
+    overflow: hidden;
 }
 
 .main .only-pc .news .news-group .inner {
     display: flex;
     flex-wrap: nowrap;
+    margin-left: 50vw;
     padding-left: calc(18.229vw - 4.375vw);
     padding-right: calc(8.333vw - 4.375vw);
 }
 
 .main .only-pc .news .news-group .item {
+  flex: 0 0 auto;
     width: 43.438vw;
     padding: 0 4.375vw;
     box-sizing: content-box;
