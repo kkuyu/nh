@@ -184,6 +184,8 @@ $(window).on('load', function () {
         return
     }
 
+    window.scrollTo(0, 0);
+
     gsap.registerPlugin(ScrollTrigger);
 
     smoothScroll("#scroll-container");
@@ -470,9 +472,12 @@ $(window).on('load', function () {
         return
     }
 
+    window.scrollTo(0, 0);
+
     gsap.registerPlugin(ScrollTrigger);
 
     smoothScroll("#scroll-container");
+
 });
 
 function smoothScroll(content, viewport, smoothness) {

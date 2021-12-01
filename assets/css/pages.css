@@ -470,3 +470,32 @@
     margin-top: 1.042vw;
     padding-left: 8.281vw;
 }
+
+.about .only-pc .about-hero-subject {
+    position: absolute;
+    top: 49.6%;
+    left: 0;
+    width: 100%;
+}
+
+.about .only-pc .about-hero-subject span {
+    position: relative;
+    display: inline-block;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    overflow: hidden;
+    z-index: 2;
+}
+
+.about .only-pc .about-hero-subject img {
+    display: block;
+    width: auto;
+}
+
+.about .only-pc .about-hero-subject .row01 {
+    padding-left: 8.333vw;
+}
+
+.about .only-pc .about-hero-subject .row02 {
+    margin-top: 0.938vw;
+    padding-left: 8.333vw;
+}
