@@ -3,7 +3,7 @@ const $main = $('.main');
 const $about = $('.about');
 
 // 공통
-$(document).ready(function () {
+$(window).on('load', function () {
     // header
     (function () {
         const $header = $app.find('.app-header');
@@ -21,12 +21,14 @@ $(document).ready(function () {
 
         $app.find('.btn-gnb-open').on("click", function (event) {
             event.preventDefault();
-            $gnb.addClass('show');
+            // $gnb.addClass('show');
+            $gnb.slideDown();
         });
 
         $app.find('.btn-gnb-close').on("click", function (event) {
             event.preventDefault();
-            $gnb.removeClass('show');
+            // $gnb.removeClass('show');
+            $gnb.slideUp();
         });
     })();
 
@@ -124,8 +126,8 @@ $(document).ready(function () {
 });
 
 // 메인
-$(document).ready(function () {
-    if (!$main) {
+$(window).on('load', function () {
+    if (!$main.length) {
         return
     }
 
@@ -366,12 +368,14 @@ $(document).ready(function () {
 
         $main.find(".only-pc .btn-inquiry-open").on("click", function (event) {
             event.preventDefault();
-            $inquiry.addClass("show");
+            // $inquiry.addClass("show");
+            $inquiry.fadeIn();
         });
 
         $inquiry.find('.btn-inquiry-close').on("click", function (event) {
             event.preventDefault();
-            $inquiry.removeClass('show');
+            // $inquiry.removeClass('show');
+            $inquiry.fadeOut();
         });
     })();
 
@@ -460,10 +464,9 @@ $(document).ready(function () {
     })();
 });
 
-
 // 어바웃
-$(document).ready(function () {
-    if (!$about) {
+$(window).on('load', function () {
+    if (!$about.length) {
         return
     }
 
