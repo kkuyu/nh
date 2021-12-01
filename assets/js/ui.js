@@ -30,7 +30,31 @@ $(document).ready(function () {
         });
     })();
 
-    // go top
+    // footer showing
+    (function () {
+        const $footer = $app.find('.only-pc .footer-real');
+        const $fake = $app.find('.only-pc .footer-fake');
+
+        gsap.to($fake, {
+            scrollTrigger: {
+                trigger: $fake,
+                pin: false,
+                end: 'bottom top+=100%',
+                onUpdate: function (self) {
+                    if (self.progress > 0) {
+                        $footer.css('opacity', 1);
+                    } else {
+                        $footer.css('opacity', 0);
+                    }
+                    const num = 60 - (self.progress * 60);
+                    $footer.find('img').css('transform', 'translateY(' + num + '%)');
+                },
+                invalidateOnRefresh: true,
+            },
+        });
+    })();
+
+    // to top
     (function () {
         $app.find('.btn-top').on("click", function (event) {
             event.preventDefault();
@@ -332,30 +356,6 @@ $(document).ready(function () {
                     $content.css('transform', 'translateY(' + num + '%)');
                 },
                 invalidateOnRefresh: true
-            },
-        });
-    })();
-
-    // footer showing
-    (function () {
-        const $footer = $main.find('.only-pc .footer-real');
-        const $fake = $main.find('.only-pc .footer-fake');
-
-        gsap.to($fake, {
-            scrollTrigger: {
-                trigger: $fake,
-                pin: false,
-                end: 'bottom top+=100%',
-                onUpdate: function (self) {
-                    if (self.progress > 0) {
-                        $footer.css('opacity', 1);
-                    } else {
-                        $footer.css('opacity', 0);
-                    }
-                    const num = 60 - (self.progress * 60);
-                    $footer.find('img').css('transform', 'translateY(' + num + '%)');
-                },
-                invalidateOnRefresh: true,
             },
         });
     })();

@@ -354,21 +354,6 @@
     box-sizing: content-box;
 }
 
-/* pc main footer */
-.main .only-pc .app-footer {}
-
-.main .only-pc .app-footer .footer-real {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: -1;
-}
-
-.main .only-pc .app-footer .footer-real>img {
-    transform: translateY(50%);
-}
-
 /* pc main floating */
 .main .only-pc .app-floating {
     position: fixed;

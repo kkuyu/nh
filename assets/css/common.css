@@ -186,6 +186,20 @@ select:focus {
     color: transparent;
 }
 
+.app-wrap .only-pc .app-footer {}
+
+.app-wrap .only-pc .app-footer .footer-real {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.main .only-pc .app-footer .footer-real>img {
+    transform: translateY(50%);
+}
+
 /* mobile */
 .app-wrap .only-mobile .app-header {
     position: absolute;
