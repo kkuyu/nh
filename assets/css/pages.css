@@ -1,0 +1,449 @@
+@charset "utf-8";
+
+/* pc main hero */
+.main .only-pc .hero-fake {}
+
+.main .only-pc .hero-real {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #222527;
+    overflow: hidden;
+}
+
+.main .only-pc .hero-content {
+    position: absolute;
+    top: 16.250vw;
+    left: 0;
+    font-size: 0;
+}
+
+.main .only-pc .hero-content span {
+    position: relative;
+    display: inline-block;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    overflow: hidden;
+    z-index: 2;
+}
+
+.main .only-pc .hero-content img {
+    width: auto;
+}
+
+.main .only-pc .hero-content .row01 {
+    padding-left: 23.854vw;
+}
+
+.main .only-pc .hero-content .row02 {
+    margin-top: 0.990vw;
+    padding-left: 23.594vw;
+}
+
+.main .only-pc .hero-content .row03 {
+    margin-top: -1.823vw;
+    padding-left: 23.438vw;
+}
+
+.main .only-pc .hero-content .row03 .box {
+    position: absolute;
+    top: 9.271vw;
+    left: 18.177vw;
+    width: 11.406vw;
+    height: 1.667vw;
+    background-color: #CC1724;
+    transform-origin: left center;
+    z-index: 1;
+}
+
+.main .only-pc .hero-content .row04 {
+    margin-top: 1.146vw;
+    padding-left: 23.854vw;
+}
+
+/* nhfinance */
+.main .only-pc .nhfinance-fake {
+    margin-top: -5.938vw;
+}
+
+.main .only-pc .nhfinance-fake:before {
+    content: "";
+    position: absolute;
+    top: 5.938vw;
+    left: 0;
+    right: 0;
+    bottom: -10px;
+    background-color: #222527;
+    z-index: -1;
+}
+
+.main .only-pc .nhfinance-real {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.main .only-pc .nhfinance-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* pc main location */
+.main .only-pc .location {
+    background: #222527;
+}
+
+.main .only-pc .location>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.main .only-pc .location-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.main .only-pc .location-nav>img {
+    position: relative;
+    z-index: 1;
+}
+
+.main .only-pc .location-nav .inner {
+    position: absolute;
+    top: 12.15vw;
+    left: -0.35vw;
+    width: 34.75vw;
+    height: 34.95vw;
+}
+
+.main .only-pc .location-nav .block {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    color: #999;
+    transition-duration: .4s;
+    transition-timing-function: cubic-bezier(.25, .74, .22, .99);
+    transform: translateX(-50%);
+}
+
+.main .only-pc .location-nav .block01 {
+    width: 16.66vw;
+    height: 16.67vw;
+}
+
+.main .only-pc .location-nav .block02 {
+    width: 24.82vw;
+    height: 25.05vw;
+}
+
+.main .only-pc .location-nav .block03 {
+    width: 100%;
+    height: 100%;
+}
+
+.main .only-pc .location-nav .svg {
+    width: 100%;
+    height: 100%;
+}
+
+.main .only-pc .location-nav .svg01 {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.main .only-pc .location-nav .svg02 {
+    color: #fff;
+    transform: rotate(-90deg);
+    transform-origin: center;
+}
+
+.main .only-pc .location-nav .block .svg02 circle {
+    transition: stroke-dashoffset 0.8s cubic-bezier(.74, 0, .24, .99);
+    stroke-dasharray: 314%;
+    stroke-dashoffset: 314%;
+}
+
+.main .only-pc .location-nav .block.active .svg02 circle {
+    stroke-dashoffset: 0%;
+}
+
+.main .only-pc .location-nav .block .min {
+    position: absolute;
+    bottom: -3.68vw;
+    left: 50%;
+    width: 8.333vw;
+    height: 8.333vw;
+    transform: translateX(-50%);
+    background: #222527;
+}
+
+.main .only-pc .location-nav .block .min img {
+    opacity: 0.3;
+    transition: opacity 0.4s 0.2s;
+}
+
+.main .only-pc .location-nav .block.active .min img {
+    opacity: 1;
+}
+
+.main .only-pc .location-group {
+    margin-left: auto;
+    margin-right: 8.333vw;
+    position: relative;
+    width: 52.813vw;
+    box-sizing: content-box;
+    z-index: 5;
+}
+
+.main .only-pc .location-group .item {
+    width: 52.813vw;
+}
+
+.main .only-pc .location-group .item+.item {
+    padding-top: 19.062vw;
+}
+
+.main .only-pc .location-group .item:last-child {
+    padding-bottom: 19.062vw;
+}
+
+/* pc main vip */
+.main .only-pc .vip-fake {}
+
+.main .only-pc .vip-real {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    background-color: #ececec;
+}
+
+.main .only-pc .vip-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* pc main amenities */
+.main .only-pc .amenities {
+    background-color: #ececec;
+}
+
+.main .only-pc .amenities>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.main .only-pc .amenities-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.main .only-pc .amenities-group {
+    position: relative;
+    margin-left: auto;
+    width: 68.125vw;
+    z-index: 5;
+}
+
+.main .only-pc .amenities-group .item:first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* pc main retails */
+.main .only-pc .retails {
+    background-color: #212121;
+    overflow: hidden;
+}
+
+.main .only-pc .retails-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.main .only-pc .retails-group {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: 1.146vw;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 35.677vw;
+    transform: translateY(-50%);
+    overflow: hidden;
+}
+
+.main .only-pc .retails-group .inner {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-left: 70vw;
+    padding-left: calc(13.021vw - 1.771vw);
+    padding-right: calc(8.333vw - 1.771vw);
+    overflow: visible;
+}
+
+.main .only-pc .retails-group .item {
+    flex: 0 0 auto;
+    width: 28.125vw;
+    padding: 0 1.771vw;
+    box-sizing: content-box;
+}
+
+.main .only-pc .retails-group .item:nth-child(2n) {
+    padding-top: 3.125vw;
+}
+
+/* pc main news */
+.main .only-pc .news {
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.main .only-pc .news-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.main .only-pc .news-group {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: 1.146vw;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    margin-top: 0.156vw;
+    height: 17.708vw;
+    overflow: hidden;
+}
+
+.main .only-pc .news-group .inner {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-left: 70vw;
+    padding-left: calc(18.229vw - 4.375vw);
+    padding-right: calc(8.333vw - 4.375vw);
+}
+
+.main .only-pc .news-group .item {
+    flex: 0 0 auto;
+    width: 43.438vw;
+    padding: 0 4.375vw;
+    box-sizing: content-box;
+}
+
+/* pc main footer */
+.main .only-pc .app-footer {}
+
+.main .only-pc .app-footer .footer-real {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.main .only-pc .app-footer .footer-real>img {
+    transform: translateY(50%);
+}
+
+/* pc main floating */
+.main .only-pc .app-floating {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.main .only-pc .app-floating .btn-inquiry-open {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25.5%;
+    height: 100%;
+}
+
+.main .only-pc .app-floating .btn-gnb-open,
+.main .only-pc .app-floating .btn-top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 6%;
+    height: 100%;
+}
+
+/* pc main inquiry */
+.main .only-pc .app-inquiry {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 20;
+}
+
+.main .only-pc .app-inquiry.show {
+    display: block;
+}
+
+.main .only-pc .app-inquiry .inner {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+}
+
+.main .only-pc .app-inquiry .btn-inquiry-close {
+    position: absolute;
+    top: 3.385vw;
+    right: 3.906vw;
+    width: 3.646vw;
+    height: 3.646vw;
+    color: transparent;
+}
+
+/* mobile reservation1 sub-reservation1 */
+.reservation1 .only-mobile .btn-reservation2 {
+    position: absolute;
+    top: 112.385vw;
+    left: 0;
+    width: 100vw;
+    height: 80.646vw;
+    color: transparent;
+}
+
+/* mobile reservation2 sub-reservation2 */
+.reservation2 .only-mobile .btn-reservation3 {
+    position: absolute;
+    top: 62.385vw;
+    left: 0;
+    width: 100vw;
+    height: 58.646vw;
+    color: transparent;
+}

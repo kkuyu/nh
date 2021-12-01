@@ -1,0 +1,283 @@
+/*
+	General styles
+*/
+@import url("../font/font.css");
+@import url("./normalize.css");
+
+body {
+    font-family: Pretendard, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #000;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body,
+html {
+    height: 100%;
+}
+
+html * {
+    box-sizing: border-box;
+}
+
+ol,
+ul,
+dl {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Noto Sans KR", "Source Sans Pro", Arial, sans-serif;
+}
+
+h1 {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+    color: initial;
+}
+
+/* a:hover {text-decoration: underline;} */
+button {
+    margin: 0;
+    padding: 0;
+}
+
+/* a, button, */
+input:focus,
+select:focus {
+    outline: none;
+}
+
+.only-pc {
+    display: block !important;
+}
+
+.only-mobile {
+    display: none !important;
+}
+
+.app-content-wrap {}
+
+.app-content-wrap img {
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+}
+
+.app-content-wrap .app-content {
+    position: relative;
+}
+
+#scroll-container {
+    overflow: hidden !important;
+}
+
+@media all and (min-width:1px) and (max-width:900px) {
+    .only-pc {
+        display: none !important;
+    }
+
+    .only-mobile {
+        display: block !important;
+    }
+}
+
+/* pc */
+.app-wrap .only-pc .app-header {
+    position: absolute;
+    top: -7.292vw;
+    left: 0;
+    width: 100%;
+    height: 7.292vw;
+    z-index: 20;
+}
+
+.app-wrap .only-pc .app-header .btn-gnb-open {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 75vw;
+    height: 100%;
+    color: transparent;
+}
+
+.app-wrap .only-pc .app-header .btn-home {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20vw;
+    height: 100%;
+    color: transparent;
+}
+
+.app-wrap .only-pc .app-gnb {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+}
+
+.app-wrap .only-pc .app-gnb.show {
+    display: block;
+}
+
+.app-wrap .only-pc .app-gnb .btn-gnb-close {
+    position: absolute;
+    top: 3.385vw;
+    right: 3.906vw;
+    width: 3.646vw;
+    height: 3.646vw;
+    color: transparent;
+}
+
+.app-wrap .only-pc .app-gnb .btn-home {
+    position: absolute;
+    top: 3.385vw;
+    left: 40.906vw;
+    width: 16.646vw;
+    height: 6.646vw;
+    color: transparent;
+}
+
+.app-wrap .only-pc .app-gnb .btn-about {
+    position: absolute;
+    top: 13.385vw;
+    left: 11.906vw;
+    width: 14.646vw;
+    height: 4.646vw;
+    color: transparent;
+}
+
+.app-wrap .only-pc .app-gnb .btn-reservation1 {
+    position: absolute;
+    color: transparent;
+}
+
+.app-wrap .only-pc .app-gnb .btn-reservation2 {
+    position: absolute;
+    color: transparent;
+}
+
+.app-wrap .only-pc .app-gnb .btn-reservation3 {
+    position: absolute;
+    color: transparent;
+}
+
+.app-wrap .only-pc .app-gnb .btn-reservation4 {
+    position: absolute;
+    color: transparent;
+}
+
+/* mobile */
+.app-wrap .only-mobile .app-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 18.889vw;
+    z-index: 20;
+}
+
+.app-wrap .only-mobile .app-header .btn-gnb-open {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    color: transparent;
+}
+
+.app-wrap .only-mobile .app-header .btn-home {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 42vw;
+    height: 100%;
+    color: transparent;
+}
+
+.app-wrap .only-mobile .app-gnb {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+}
+
+.app-wrap .only-mobile .app-gnb.show {
+    display: block;
+}
+
+.app-wrap .only-mobile .app-gnb .btn-gnb-close {
+    position: absolute;
+    top: 8.633vw;
+    right: 7.222vw;
+    width: 6.556vw;
+    height: 6.556vw;
+    color: transparent;
+}
+
+.app-wrap .only-mobile .app-gnb .btn-home {
+    position: absolute;
+    top: 4vw;
+    left: 0;
+    width: 42vw;
+    height: 16vw;
+    color: transparent;
+}
+
+.app-wrap .only-mobile .app-gnb .btn-about {
+    position: absolute;
+    top: 38vw;
+    left: 0;
+    width: 100vw;
+    height: 16vw;
+    color: transparent;
+}
+
+.app-wrap .only-mobile .app-gnb .btn-reservation1 {
+    position: absolute;
+    top: 94vw;
+    left: 0;
+    width: 100vw;
+    height: 16vw;
+    color: transparent;
+}
+
+.app-wrap .only-mobile .app-gnb .btn-reservation2 {
+    position: absolute;
+    color: transparent;
+}
+
+.app-wrap .only-mobile .app-gnb .btn-reservation3 {
+    position: absolute;
+    color: transparent;
+}
+
+.app-wrap .only-mobile .app-gnb .btn-reservation4 {
+    position: absolute;
+    top: 118vw;
+    left: 0;
+    width: 100vw;
+    height: 32vw;
+    color: transparent;
+}
