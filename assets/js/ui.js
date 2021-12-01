@@ -56,6 +56,59 @@ $(window).on('load', function () {
         });
     })();
 
+    // ui parallax
+    (function () {
+        const $parallax = $app.find('.ui-parallax');
+
+        $parallax.each(function (index, el) {
+            const $el = $(el);
+            gsap.to($el, {
+                scrollTrigger: {
+                    trigger: $el,
+                    start: 'top bottom',
+                    end: 'bottom top',
+                    onUpdate: function (self) {
+                        const num = 6 - self.progress * 12;
+                        $el.find('> img').css('transform', 'translateY(' + num + 'vw) scale(1.22)');
+                    },
+                    invalidateOnRefresh: true
+                },
+            });
+        });
+    })();
+
+    // ui stagger
+    (function () {
+        const $stagger = $app.find('.ui-stagger');
+        const $row = $stagger.find('.row');
+
+        $row.each(function (index, el) {
+            const $el = $(el);
+            ScrollTrigger.batch($el.find("img"), {
+                onEnter: elements => {
+                    gsap.from(elements, {
+                        autoAlpha: 0,
+                        delay: index * 0.5,
+                        duration: 1,
+                        y: '100%',
+                        rotate: '15deg',
+                        stagger: 0.15,
+                        onStart: function () {
+                            if ($el.find('.box').length) {
+                                gsap.to($el.find('.box'), {
+                                    scaleX: 1,
+                                    delay: 0.2,
+                                    duration: 0.5,
+                                });
+                            }
+                        },
+                    });
+                },
+                once: true
+            });
+        });
+    })();
+
     // to top
     (function () {
         $app.find('.btn-top').on("click", function (event) {
@@ -407,59 +460,6 @@ $(window).on('load', function () {
             }
 
             lastScrollTop = st;
-        });
-    })();
-
-    // ui parallax
-    (function () {
-        const $parallax = $main.find('.ui-parallax');
-
-        $parallax.each(function (index, el) {
-            const $el = $(el);
-            gsap.to($el, {
-                scrollTrigger: {
-                    trigger: $el,
-                    start: 'top bottom',
-                    end: 'bottom top',
-                    onUpdate: function (self) {
-                        const num = 6 - self.progress * 12;
-                        $el.find('> img').css('transform', 'translateY(' + num + 'vw) scale(1.22)');
-                    },
-                    invalidateOnRefresh: true
-                },
-            });
-        });
-    })();
-
-    // ui stagger
-    (function () {
-        const $stagger = $main.find('.ui-stagger');
-        const $row = $stagger.find('.row');
-
-        $row.each(function (index, el) {
-            const $el = $(el);
-            ScrollTrigger.batch($el.find("img"), {
-                onEnter: elements => {
-                    gsap.from(elements, {
-                        autoAlpha: 0,
-                        delay: index * 0.5,
-                        duration: 1,
-                        y: '100%',
-                        rotate: '15deg',
-                        stagger: 0.15,
-                        onStart: function () {
-                            if ($el.find('.box').length) {
-                                gsap.to($el.find('.box'), {
-                                    scaleX: 1,
-                                    delay: 0.2,
-                                    duration: 0.5,
-                                });
-                            }
-                        },
-                    });
-                },
-                once: true
-            });
         });
     })();
 });

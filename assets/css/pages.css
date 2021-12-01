@@ -432,3 +432,41 @@
     height: 58.646vw;
     color: transparent;
 }
+
+/* pc about hero */
+.about .only-pc .about-hero-real {
+    position: absolute;
+    top: 16.2%;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.about .only-pc .about-hero-title {
+    position: absolute;
+    top: 10.6%;
+    left: 0;
+    width: 100%;
+}
+
+.about .only-pc .about-hero-title span {
+    position: relative;
+    display: inline-block;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    overflow: hidden;
+    z-index: 2;
+}
+
+.about .only-pc .about-hero-title img {
+    display: block;
+    width: auto;
+}
+
+.about .only-pc .about-hero-title .row01 {
+    padding-left: 8.750vw;
+}
+
+.about .only-pc .about-hero-title .row02 {
+    margin-top: 1.042vw;
+    padding-left: 8.281vw;
+}
