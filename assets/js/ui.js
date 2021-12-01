@@ -41,7 +41,12 @@ $(window).on('load', function () {
             scrollTrigger: {
                 trigger: $fake,
                 pin: false,
-                end: 'bottom top+=100%',
+                start: function () {
+                    return $(document).height() - $fake.height() - $(window).height();
+                },
+                end: function () {
+                    return $(document).height() - $(window).height();
+                },
                 onUpdate: function (self) {
                     if (self.progress > 0) {
                         $footer.css('opacity', 1);
@@ -49,7 +54,7 @@ $(window).on('load', function () {
                         $footer.css('opacity', 0);
                     }
                     const num = 60 - (self.progress * 60);
-                    $footer.find('img').css('transform', 'translateY(' + num + '%)');
+                    $footer.find('img').css('transform', 'translateY(' + num + '%) translateZ(0.1px)');
                 },
                 invalidateOnRefresh: true,
             },
