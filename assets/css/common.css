@@ -194,10 +194,14 @@ select:focus {
   z-index: -1;
 }
 
-.app-wrap .only-pc .app-footer .footer-real {
+.app-wrap .only-pc .footer-fake {
+  overflow: hidden;
 }
 
-.main .only-pc .app-footer .footer-real>img {
+.app-wrap .only-pc .footer-real {
+}
+
+.app-wrap .only-pc .footer-real>img {
     will-change: transform;
     /* transform: translateY(50%); */
 }
