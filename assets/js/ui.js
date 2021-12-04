@@ -49,13 +49,17 @@ $(window).on('load', function () {
                 },
                 onUpdate: function (self) {
                     // console.log(self.progress)
-                    const num = -1 * (60 - (self.progress * 60));
+                    const num = -1 * (20 - (self.progress * 20));
                     // if (self.progress * 100 % 2 === 0) {
                     //     $footer.find('img').css('transform', 'translate(0, ' + num + '%)');
                     // } else {
                     //     $footer.find('img').css('transform', 'translate3d(0, ' + num + '%, 0.1px)');
                     // }
-                    $fake.find('img').css('transform', 'translate(0, ' + num + '%)');
+                    if (self.progress * 100 % 2 === 0) {
+                        $fake.find('img').css('transform', 'translate(0, ' + num + '%)');
+                    } else {
+                        $fake.find('img').css('transform', 'translate3d(0, ' + num + '%, 0.1px)');
+                    }
                 },
                 invalidateOnRefresh: true,
             },
