@@ -33,26 +33,90 @@ $(window).on('load', function () {
     })();
 
     // footer showing
-    (function () {
-        const $footer = $app.find('.only-pc .footer-real');
-        const $fake = $app.find('.only-pc .footer-fake');
+    // (function () {
+    //     const $footer = $app.find('.only-pc .footer-real');
+    //     const $fake = $app.find('.only-pc .footer-fake');
 
-        gsap.to($fake, {
-            scrollTrigger: {
-                trigger: $fake,
-                pin: false,
-                end: 'bottom top+=100%',
-                onUpdate: function (self) {
-                    if (self.progress > 0) {
-                        $footer.css('opacity', 1);
-                    } else {
-                        $footer.css('opacity', 0);
-                    }
-                    const num = 60 - (self.progress * 60);
-                    $footer.find('img').css('transform', 'translateY(' + num + '%)');
+    //     gsap.to($fake, {
+    //         scrollTrigger: {
+    //             trigger: $fake,
+    //             pin: false,
+    //             start: function () {
+    //                 return $(document).height() - $fake.height() - $(window).height();
+    //             },
+    //             end: function () {
+    //                 return $(document).height() - $(window).height();
+    //             },
+    //             onUpdate: function (self) {
+    //                 // const num = -1 * (30 - (self.progress * 30));
+    //                 // if (self.progress * 100 % 2 === 0) {
+    //                 //     $fake.find('img').css('transform', 'translate(0, ' + num + '%)');
+    //                 // } else {
+    //                 //     $fake.find('img').css('transform', 'translate3d(0, ' + num + '%, 0.1px)');
+    //                 // }
+
+    //                 // const num = 60 - (self.progress * 60);
+    //                 // if (self.progress * 100 % 2 === 0) {
+    //                 //     $footer.find('img').css('transform', 'translate(0, ' + num + '%)');
+    //                 // } else {
+    //                 //     $footer.find('img').css('transform', 'translate3d(0, ' + num + '%, 0.1px)');
+    //                 // }
+    //             },
+    //             invalidateOnRefresh: true,
+    //         },
+    //     });
+    // })();
+
+    // ui parallax
+    (function () {
+        const $parallax = $app.find('.ui-parallax');
+
+        $parallax.each(function (index, el) {
+            const $el = $(el);
+            gsap.to($el, {
+                scrollTrigger: {
+                    trigger: $el,
+                    start: 'top bottom',
+                    end: 'bottom top',
+                    onUpdate: function (self) {
+                        const num = 6 - self.progress * 12;
+                        $el.find('> img').css('transform', 'translateY(' + num + 'vw) scale(1.22)');
+                    },
+                    invalidateOnRefresh: true
                 },
-                invalidateOnRefresh: true,
-            },
+            });
+        });
+    })();
+
+    // ui stagger
+    (function () {
+        const $stagger = $app.find('.ui-stagger');
+        const $row = $stagger.find('.row');
+
+        $row.each(function (index, el) {
+            const $el = $(el);
+            ScrollTrigger.batch($el.find("img"), {
+                onEnter: elements => {
+                    gsap.from(elements, {
+                        autoAlpha: 0,
+                        delay: index * 0.5,
+                        duration: 1,
+                        y: '100%',
+                        rotate: '15deg',
+                        stagger: 0.15,
+                        onStart: function () {
+                            if ($el.find('.box').length) {
+                                gsap.to($el.find('.box'), {
+                                    scaleX: 1,
+                                    delay: 0.2,
+                                    duration: 0.5,
+                                });
+                            }
+                        },
+                    });
+                },
+                once: true
+            });
         });
     })();
 
@@ -130,6 +194,8 @@ $(window).on('load', function () {
     if (!$main.length) {
         return
     }
+
+    window.scrollTo(0, 0);
 
     gsap.registerPlugin(ScrollTrigger);
 
@@ -409,59 +475,6 @@ $(window).on('load', function () {
             lastScrollTop = st;
         });
     })();
-
-    // ui parallax
-    (function () {
-        const $parallax = $main.find('.ui-parallax');
-
-        $parallax.each(function (index, el) {
-            const $el = $(el);
-            gsap.to($el, {
-                scrollTrigger: {
-                    trigger: $el,
-                    start: 'top bottom',
-                    end: 'bottom top',
-                    onUpdate: function (self) {
-                        const num = 6 - self.progress * 12;
-                        $el.find('> img').css('transform', 'translateY(' + num + 'vw) scale(1.22)');
-                    },
-                    invalidateOnRefresh: true
-                },
-            });
-        });
-    })();
-
-    // ui stagger
-    (function () {
-        const $stagger = $main.find('.ui-stagger');
-        const $row = $stagger.find('.row');
-
-        $row.each(function (index, el) {
-            const $el = $(el);
-            ScrollTrigger.batch($el.find("img"), {
-                onEnter: elements => {
-                    gsap.from(elements, {
-                        autoAlpha: 0,
-                        delay: index * 0.5,
-                        duration: 1,
-                        y: '100%',
-                        rotate: '15deg',
-                        stagger: 0.15,
-                        onStart: function () {
-                            if ($el.find('.box').length) {
-                                gsap.to($el.find('.box'), {
-                                    scaleX: 1,
-                                    delay: 0.2,
-                                    duration: 0.5,
-                                });
-                            }
-                        },
-                    });
-                },
-                once: true
-            });
-        });
-    })();
 });
 
 // 어바웃
@@ -470,9 +483,12 @@ $(window).on('load', function () {
         return
     }
 
+    window.scrollTo(0, 0);
+
     gsap.registerPlugin(ScrollTrigger);
 
     smoothScroll("#scroll-container");
+
 });
 
 function smoothScroll(content, viewport, smoothness) {
