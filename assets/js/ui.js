@@ -48,13 +48,13 @@ $(window).on('load', function () {
                     return $(document).height() - $(window).height();
                 },
                 onUpdate: function (self) {
-                    if (self.progress > 0) {
-                        $footer.css('opacity', 1);
-                    } else {
-                        $footer.css('opacity', 0);
-                    }
+                    // console.log(self.progress)
                     const num = 60 - (self.progress * 60);
-                    $footer.find('img').css('transform', 'translateY(' + num + '%) translateZ(0.1px)');
+                    if (self.progress * 100 % 2 === 0) {
+                        $footer.find('img').css('transform', 'translate(0, ' + num + '%)');
+                    } else {
+                        $footer.find('img').css('transform', 'translate3d(0, ' + num + '%, 0.1px)');
+                    }
                 },
                 invalidateOnRefresh: true,
             },
