@@ -202,9 +202,12 @@ select:focus {
   will-change: transform;
 }
 
+.app-wrap .only-pc .footer-fake>img {
+  will-change: transform;
+}
+
 .app-wrap .only-pc .footer-real>img {
     will-change: transform;
-    /* transform: translateY(50%); */
 }
 
 /* mobile */
