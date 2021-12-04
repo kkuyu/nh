@@ -186,28 +186,18 @@ select:focus {
     color: transparent;
 }
 
-.app-wrap .only-pc .app-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  z-index: -1;
+.app-wrap .only-pc .app-footer {}
+
+.app-wrap .only-pc .app-footer .footer-real {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
 }
 
-.app-wrap .only-pc .footer-fake {
-  overflow: hidden;
-}
-
-.app-wrap .only-pc .footer-fake {
-  will-change: transform;
-}
-
-.app-wrap .only-pc .footer-fake>img {
-  will-change: transform;
-}
-
-.app-wrap .only-pc .footer-real>img {
-    will-change: transform;
+.main .only-pc .app-footer .footer-real>img {
+    transform: translateY(50%);
 }
 
 /* mobile */
