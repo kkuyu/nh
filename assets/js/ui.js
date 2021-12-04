@@ -48,7 +48,7 @@ $(window).on('load', function () {
                     return $(document).height() - $(window).height();
                 },
                 onUpdate: function (self) {
-                    const num = -1 * (30 - (self.progress * 30));
+                    const num = -1 * (40 - (self.progress * 40));
                     if (self.progress * 100 % 2 === 0) {
                         $fake.find('img').css('transform', 'translate(0, ' + num + '%)');
                     } else {
