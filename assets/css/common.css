@@ -198,7 +198,8 @@ select:focus {
   overflow: hidden;
 }
 
-.app-wrap .only-pc .footer-real {
+.app-wrap .only-pc .footer-fake {
+  will-change: transform;
 }
 
 .app-wrap .only-pc .footer-real>img {
