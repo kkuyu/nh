@@ -19,15 +19,27 @@
     font-size: 0;
 }
 
-.main .only-pc .hero-content span {
-    position: relative;
-    display: inline-block;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    overflow: hidden;
-    z-index: 2;
+.main .only-pc .hero-content .box {
+    position: absolute;
+    top: 9.271vw;
+    left: 18.177vw;
+    width: 11.406vw;
+    height: 1.667vw;
+    background-color: #CC1724;
+    transform-origin: left center;
 }
 
-.main .only-pc .hero-content img {
+.main .only-pc .hero-content .row {
+    opacity: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    overflow: hidden;
+}
+
+.main .only-pc .hero-content .row span {
+    display: inline-block;
+}
+
+.main .only-pc .hero-content .row img {
     width: auto;
 }
 
@@ -45,23 +57,12 @@
     padding-left: 23.438vw;
 }
 
-.main .only-pc .hero-content .row03 .box {
-    position: absolute;
-    top: 9.271vw;
-    left: 18.177vw;
-    width: 11.406vw;
-    height: 1.667vw;
-    background-color: #CC1724;
-    transform-origin: left center;
-    z-index: 1;
-}
-
 .main .only-pc .hero-content .row04 {
     margin-top: 1.146vw;
     padding-left: 23.854vw;
 }
 
-/* nhfinance */
+/* pc nhfinance */
 .main .only-pc .nhfinance-fake {
     margin-top: -5.938vw;
 }
@@ -82,6 +83,7 @@
     top: 0;
     left: 0;
     width: 100%;
+    background-color: #222527;
 }
 
 .main .only-pc .nhfinance-content {
@@ -354,62 +356,13 @@
     box-sizing: content-box;
 }
 
-/* pc main floating */
-.main .only-pc .app-floating {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10;
-}
-
-.main .only-pc .app-floating .btn-inquiry-open {
+/* mobile main */
+.main .only-mobile .hero .btn-reservation1 {
     position: absolute;
-    top: 0;
+    top: 9.2%;
     right: 0;
-    width: 25.5%;
-    height: 100%;
-}
-
-.main .only-pc .app-floating .btn-gnb-open,
-.main .only-pc .app-floating .btn-top {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 6%;
-    height: 100%;
-}
-
-/* pc main inquiry */
-.main .only-pc .app-inquiry {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.8);
-    z-index: 20;
-}
-
-.main .only-pc .app-inquiry.show {
-    display: block;
-}
-
-.main .only-pc .app-inquiry .inner {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    transform: translateY(-50%);
-}
-
-.main .only-pc .app-inquiry .btn-inquiry-close {
-    position: absolute;
-    top: 3.385vw;
-    right: 3.906vw;
-    width: 3.646vw;
-    height: 3.646vw;
+    width: 18%;
+    height: 2.6%;
     color: transparent;
 }
 
@@ -430,6 +383,16 @@
     left: 0;
     width: 100%;
     height: 58.646vw;
+    color: transparent;
+}
+
+/* mobile reservation3 sub-reservation3 */
+.reservation3 .only-mobile .btn-reservation4 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 18vw;
     color: transparent;
 }
 
@@ -454,15 +417,17 @@
     width: 100%;
 }
 
-.about .only-pc .hero-title span {
-    position: relative;
-    display: inline-block;
+.about .only-pc .hero-title .row {
+    opacity: 0;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     overflow: hidden;
-    z-index: 2;
 }
 
-.about .only-pc .hero-title img {
+.about .only-pc .hero-title .row span {
+    display: inline-block;
+}
+
+.about .only-pc .hero-title .row img {
     display: block;
     width: auto;
 }
@@ -483,15 +448,17 @@
     width: 100%;
 }
 
-.about .only-pc .hero-subject span {
-    position: relative;
-    display: inline-block;
+.about .only-pc .hero-subject .row {
+    opacity: 0;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     overflow: hidden;
-    z-index: 2;
 }
 
-.about .only-pc .hero-subject img {
+.about .only-pc .hero-subject .row span {
+    display: inline-block;
+}
+
+.about .only-pc .hero-subject .row img {
     display: block;
     width: auto;
 }

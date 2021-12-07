@@ -186,6 +186,61 @@ select:focus {
     color: transparent;
 }
 
+.app-wrap .only-pc .app-gnb .btn-overview {
+    position: absolute;
+    top: 39%;
+    left: 11.906vw;
+    width: 14.646vw;
+    height: 4.5%;
+    color: transparent;
+    background: olive;
+    opacity: 0.5;
+}
+
+.app-wrap .only-pc .app-gnb .btn-richard {
+    position: absolute;
+    top: 43.5%;
+    left: 11.906vw;
+    width: 14.646vw;
+    height: 4.5%;
+    color: transparent;
+    background: red;
+    opacity: 0.5;
+}
+
+.app-wrap .only-pc .app-gnb .btn-specification {
+    position: absolute;
+    top: 48%;
+    left: 11.906vw;
+    width: 14.646vw;
+    height: 4.5%;
+    color: transparent;
+    background: pink;
+    opacity: 0.5;
+}
+
+.app-wrap .only-pc .app-gnb .btn-entrance {
+    position: absolute;
+    top: 52.5%;
+    left: 11.906vw;
+    width: 14.646vw;
+    height: 4.5%;
+    color: transparent;
+    background: blue;
+    opacity: 0.5;
+}
+
+.app-wrap .only-pc .app-gnb .btn-gbd {
+    position: absolute;
+    top: 57.5%;
+    left: 11.906vw;
+    width: 14.646vw;
+    height: 4.5%;
+    color: transparent;
+    background: violet;
+    opacity: 0.5;
+}
+
 .app-wrap .only-pc .app-footer {
     position: fixed;
     bottom: 0;
@@ -207,11 +262,7 @@ select:focus {
 }
 
 .app-wrap .only-pc .ui-parallax img {
-  transform: scale(1.22);
-}
-
-.app-wrap .only-pc .ui-stagger .row {
-  opacity: 0;
+    transform: scale(1.22);
 }
 
 /* mobile */
@@ -307,5 +358,64 @@ select:focus {
     left: 0;
     width: 100%;
     height: 32vw;
+    color: transparent;
+}
+
+/* floating */
+.app-wrap .only-pc .app-floating {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.app-wrap .only-pc .app-floating .btn-inquiry-open {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25.5%;
+    height: 100%;
+}
+
+.app-wrap .only-pc .app-floating .btn-gnb-open,
+.app-wrap .only-pc .app-floating .btn-top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 6%;
+    height: 100%;
+}
+
+/* inquiry */
+.app-wrap .only-pc .app-inquiry {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 20;
+}
+
+.app-wrap .only-pc .app-inquiry.show {
+    display: block;
+}
+
+.app-wrap .only-pc .app-inquiry .inner {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+}
+
+.app-wrap .only-pc .app-inquiry .btn-inquiry-close {
+    position: absolute;
+    top: 3.385vw;
+    right: 3.906vw;
+    width: 3.646vw;
+    height: 3.646vw;
     color: transparent;
 }

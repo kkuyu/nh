@@ -21,13 +21,11 @@ $(window).on('load', function () {
 
         $app.find('.btn-gnb-open').on("click", function (event) {
             event.preventDefault();
-            // $gnb.addClass('show');
             $gnb.slideDown();
         });
 
         $app.find('.btn-gnb-close').on("click", function (event) {
             event.preventDefault();
-            // $gnb.removeClass('show');
             $gnb.slideUp();
         });
     })();
@@ -60,70 +58,70 @@ $(window).on('load', function () {
 
         $row.each(function (index, el) {
             const $el = $(el);
-            ScrollTrigger.batch($el.find("img"), {
+            ScrollTrigger.batch($el.find('.row-inner'), {
                 onEnter: elements => {
                     gsap.from(elements, {
                         autoAlpha: 0,
                         delay: index * 0.5,
                         duration: 1,
                         y: '100%',
-                        rotate: '15deg',
                         stagger: 0.15,
                         onStart: function () {
                             $el.css('opacity', 1);
-                            if ($el.find('.box').length) {
-                                gsap.to($el.find('.box'), {
-                                    scaleX: 1,
-                                    delay: 0.2,
-                                    duration: 0.5,
-                                });
-                            }
                         },
                     });
                 },
                 once: true
             });
         });
+
+        if ($stagger.find('.box').length) {
+            gsap.to($stagger.find('.box'), {
+                scaleX: 1,
+                delay: 2.4,
+                duration: 0.5,
+            });
+        }
     })();
 
     // to top
     (function () {
         $app.find('.btn-top').on("click", function (event) {
             event.preventDefault();
-            window.scrollTo(0, 0);
+            moveScroll(0);
         });
     })();
 
     // inquiry popup open
     (function () {
         const $inquiry = $app.find(".only-pc .app-inquiry");
-  
+
         $app.find(".only-pc .btn-inquiry-open").on("click", function (event) {
             event.preventDefault();
             // $inquiry.addClass("show");
             $inquiry.fadeIn();
         });
-  
+
         $inquiry.find('.btn-inquiry-close').on("click", function (event) {
             event.preventDefault();
             // $inquiry.removeClass('show');
             $inquiry.fadeOut();
         });
     })();
-  
+
     // floating
     (function () {
         const $floating = $app.find('.only-pc .app-floating');
-  
+
         const $default = $floating.find('.image-default');
         const $menu = $floating.find('.image-menu');
         const $top = $floating.find('.image-top');
-  
+
         let lastScrollTop = 0;
-  
+
         $(window).scroll(function () {
             const st = $(this).scrollTop();
-  
+
             if ($(window).scrollTop() < 50) {
                 $default.show();
                 $menu.hide();
@@ -137,7 +135,7 @@ $(window).on('load', function () {
                 $menu.hide();
                 $top.show();
             }
-  
+
             lastScrollTop = st;
         });
     })();
@@ -157,7 +155,24 @@ $(window).on('load', function () {
         $app.find('.btn-about').on("click", function (event) {
             const isAbout = window.location.href.indexOf('/about.html') !== -1;
             if (isAbout) {
-                event.preventDefault()
+                event.preventDefault();
+            }
+        });
+
+        $app.find('.btn-about-anchor').on("click", function (event) {
+            const isAbout = window.location.href.indexOf('/about.html') !== -1;
+            if (isAbout) {
+                event.preventDefault();
+
+                const $gnb = $app.find('.app-gnb');
+                const search = $(this).attr('href').split('/about.html')[1];
+                if (search) {
+                    const target = $("#" + search.split('?target=')[1]);
+                    if (target.length) {
+                        $gnb.slideUp();
+                        moveScroll(target.offset().top);
+                    }
+                }
             }
         });
     })();
@@ -209,7 +224,7 @@ $(window).on('load', function () {
         return
     }
 
-    window.scrollTo(0, 0);
+    moveScroll(0);
 
     gsap.registerPlugin(ScrollTrigger);
 
@@ -449,11 +464,21 @@ $(window).on('load', function () {
         return
     }
 
-    window.scrollTo(0, 0);
-
     gsap.registerPlugin(ScrollTrigger);
 
     smoothScroll("#scroll-container");
+
+    (function () {
+        let top = 0;
+        if (window.location.search) {
+            const target = $("#" + window.location.search.split('?target=')[1]);
+            if (target.length) {
+                top = target.offset().top
+            }
+        }
+
+        moveScroll(top);
+    })();
 
     // overview parallax
     (function () {
@@ -524,9 +549,9 @@ $(window).on('load', function () {
         const $group = $life.find('.life-group');
         const $groupInner = $life.find('.life-group .inner');
         const $groupItems = $life.find('.life-group .item');
- 
+
         let maxWidth = 0;
-  
+
         const getMaxWidth = function () {
             maxWidth = 0;
             maxWidth += 1 * $life.find('.inner').css('padding-left').replace(/[^-\d\.]/g, '');
@@ -535,11 +560,11 @@ $(window).on('load', function () {
                 maxWidth += $(el).outerWidth();
             });
         };
-  
+
         getMaxWidth();
-  
+
         ScrollTrigger.addEventListener("refreshInit", getMaxWidth);
-  
+
         gsap.to($main, {
             scrollTrigger: {
                 trigger: $group,
@@ -718,6 +743,16 @@ $(window).on('load', function () {
         });
     })();
 });
+
+function moveScroll(scrollY) {
+    $('html, body').animate({
+        scrollTop: scrollY
+    }, 500, 'swing', function () {
+        const url = new URL(location);
+        url.searchParams.delete('target');
+        history.replaceState(null, null, url);
+    })
+};
 
 function smoothScroll(content, viewport, smoothness) {
     content = gsap.utils.toArray(content)[0];
