@@ -33,6 +33,7 @@ $(window).on('load', function () {
     // ui parallax
     (function () {
         const $parallax = $app.find('.ui-parallax');
+        const $parallax2 = $app.find('.ui-parallax2');
 
         $parallax.each(function (index, el) {
             const $el = $(el);
@@ -43,6 +44,21 @@ $(window).on('load', function () {
                     end: 'bottom top',
                     onUpdate: function (self) {
                         const num = 6 - self.progress * 12;
+                        $el.find('> img').css('transform', 'translateY(' + num + 'vw) scale(1.22)');
+                    },
+                    invalidateOnRefresh: true
+                },
+            });
+        });
+        $parallax2.each(function (index, el) {
+            const $el = $(el);
+            gsap.to($el, {
+                scrollTrigger: {
+                    trigger: $el,
+                    start: 'top bottom',
+                    end: 'bottom top',
+                    onUpdate: function (self) {
+                        const num = 8 - self.progress * 16;
                         $el.find('> img').css('transform', 'translateY(' + num + 'vw) scale(1.22)');
                     },
                     invalidateOnRefresh: true
@@ -458,7 +474,7 @@ $(window).on('load', function () {
     })();
 });
 
-// 어바웃
+// about
 $(window).on('load', function () {
     if (!$about.length) {
         return
@@ -532,9 +548,9 @@ $(window).on('load', function () {
                 endTrigger: $content,
                 scrub: 0.2,
                 onUpdate: function (self) {
-                    const num = 30 - self.progress * 60;
-                    const num2 = 20 - self.progress * 40;
-                    $box.find('img').first().css('transform', 'translateY(' + num * 1 + '%)');
+                    const num = 40 - self.progress * 80;
+                    const num2 = 30 - self.progress * 60;
+                    $box.find('img').first().css('transform', 'translateY(' + num + '%)');
                     $box.find('img').last().css('transform', 'translateY(' + num2 + '%)');
                 },
                 invalidateOnRefresh: true
@@ -601,7 +617,8 @@ $(window).on('load', function () {
     (function () {
         const $specification = $about.find('.only-pc .specification');
         const $top = $about.find('.only-pc .specification-top');
-        const $middle = $about.find('.only-pc .specification-middle');
+        const $middleTitle = $about.find('.only-pc .specification-middle-title');
+        const $middleContent = $about.find('.only-pc .specification-middle-content');
         const $bottom = $about.find('.only-pc .specification-bottom');
 
         gsap.to($about, {
@@ -614,14 +631,14 @@ $(window).on('load', function () {
                 scrub: 0.2,
                 onUpdate: function (self) {
                     const num = 30 - self.progress * 30;
-                    $top.css('transform', 'translateY(' + num + '%)');
+                    $top.css('transform', 'translateY(' + num + 'vw)');
                 },
                 invalidateOnRefresh: true
             },
         });
         gsap.to($about, {
             scrollTrigger: {
-                trigger: $middle,
+                trigger: $middleTitle,
                 pin: false,
                 start: 'top bottom',
                 end: 'top top',
@@ -629,7 +646,8 @@ $(window).on('load', function () {
                 scrub: 0.2,
                 onUpdate: function (self) {
                     const num = 30 - self.progress * 30;
-                    $middle.css('transform', 'translateY(' + num + '%)');
+                    $middleTitle.css('transform', 'translateY(' + num + 'vw)');
+                    $middleContent.css('transform', 'translateY(' + num * 2 + 'vw)');
                 },
                 invalidateOnRefresh: true
             },
@@ -644,7 +662,7 @@ $(window).on('load', function () {
                 scrub: 0.2,
                 onUpdate: function (self) {
                     const num = 20 - self.progress * 20;
-                    $bottom.css('transform', 'translateY(' + num + '%)');
+                    $bottom.css('transform', 'translateY(' + num + 'vw)');
                 },
                 invalidateOnRefresh: true
             },
@@ -668,7 +686,7 @@ $(window).on('load', function () {
                 scrub: 0.2,
                 onUpdate: function (self) {
                     const num = 40 - self.progress * 40;
-                    $box.css('transform', 'translateY(' + num + '%)');
+                    $box.css('transform', 'translateY(' + num + 'vw)');
                 },
                 invalidateOnRefresh: true
             },
@@ -683,7 +701,7 @@ $(window).on('load', function () {
                 scrub: 0.2,
                 onUpdate: function (self) {
                     const num = 20 - self.progress * 20;
-                    $top.css('transform', 'translateY(' + num + '%)');
+                    $top.css('transform', 'translateY(' + num + 'vw)');
                 },
                 invalidateOnRefresh: true
             },
@@ -697,8 +715,8 @@ $(window).on('load', function () {
                 endTrigger: $bottom,
                 scrub: 0.2,
                 onUpdate: function (self) {
-                    const num = 40 - self.progress * 40;
-                    $bottom.css('transform', 'translateY(' + num + '%)');
+                    const num = 35 - self.progress * 35;
+                    $bottom.css('transform', 'translateY(' + num + 'vw)');
                 },
                 invalidateOnRefresh: true
             },
@@ -721,7 +739,7 @@ $(window).on('load', function () {
                 scrub: 0.2,
                 onUpdate: function (self) {
                     const num = 15 - self.progress * 15;
-                    $title.css('transform', 'translateY(' + num + '%)');
+                    $title.css('transform', 'translateY(' + num + 'vw)');
                 },
                 invalidateOnRefresh: true
             },
@@ -736,7 +754,7 @@ $(window).on('load', function () {
                 scrub: 0.2,
                 onUpdate: function (self) {
                     const num = 20 - self.progress * 20;
-                    $content.css('transform', 'translateY(' + num + '%)');
+                    $content.css('transform', 'translateY(' + num + 'vw)');
                 },
                 invalidateOnRefresh: true
             },
