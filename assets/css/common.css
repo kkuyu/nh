@@ -193,7 +193,6 @@ select:focus {
     width: 14.646vw;
     height: 4.5%;
     color: transparent;
-    background: olive;
     opacity: 0.5;
 }
 
@@ -204,7 +203,6 @@ select:focus {
     width: 14.646vw;
     height: 4.5%;
     color: transparent;
-    background: red;
     opacity: 0.5;
 }
 
@@ -215,7 +213,6 @@ select:focus {
     width: 14.646vw;
     height: 4.5%;
     color: transparent;
-    background: pink;
     opacity: 0.5;
 }
 
@@ -226,7 +223,6 @@ select:focus {
     width: 14.646vw;
     height: 4.5%;
     color: transparent;
-    background: blue;
     opacity: 0.5;
 }
 
@@ -237,7 +233,6 @@ select:focus {
     width: 14.646vw;
     height: 4.5%;
     color: transparent;
-    background: violet;
     opacity: 0.5;
 }
 
