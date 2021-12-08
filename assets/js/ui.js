@@ -127,7 +127,7 @@ $(window).on('load', function () {
 
     // floating
     (function () {
-        const $floating = $app.find('.only-pc .app-floating');
+        const $floating = $app.find('.app-floating');
 
         const $default = $floating.find('.image-default');
         const $menu = $floating.find('.image-menu');

@@ -382,6 +382,32 @@ select:focus {
     height: 100%;
 }
 
+.app-wrap .only-mobile .app-floating {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.app-wrap .only-mobile .app-floating .btn-reservation1 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 16%;
+    height: 66%;
+    color: transparent;
+}
+
+.app-wrap .only-mobile .app-floating .btn-gnb-open,
+.app-wrap .only-mobile .app-floating .btn-top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 16%;
+    height: 33%;
+}
+
 /* inquiry */
 .app-wrap .only-pc .app-inquiry {
     display: none;
